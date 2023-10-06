@@ -1,5 +1,6 @@
 --Creating database
-CREATE DATABASE IF NOT EXISTS kumeudb;
+SELECT 'CREATE DATABASE kumeudb'
+WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'kumeudb')\gexec
 
 --Connecting to db
 \c kumeudb
@@ -33,6 +34,4 @@ CREATE TABLE IF NOT EXISTS measurement(
   rainfall FLOAT
 );
 
-ALTER USER postgres WITH PASSWORD ‘postgres’;
 ALTER ROLE postgres SET client_encoding TO 'utf8';
-GRANT ALL PRIVILEGES ON DATABASE kumeudb TO postgres;
