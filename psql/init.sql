@@ -34,4 +34,47 @@ CREATE TABLE IF NOT EXISTS measurement(
   rainfall FLOAT
 );
 
-ALTER ROLE postgres SET client_encoding TO 'utf8';
+
+
+--Setting up vineyard
+INSERT INTO vineyard(vineyard_id,
+  vineyard_name,
+  vineyard_location,
+  vineyard_size
+) VALUES (
+  1,
+  'kumeu-main',
+  'kumeu',
+  1
+);
+
+--OUR node id set ups 
+INSERT INTO node(
+  node_id,
+  vineyard_id,
+  node_name
+) VALUES (
+  'eui-70b3d57ed005de54',
+  1,
+  'node 1'
+);
+
+INSERT INTO node(
+  node_id,
+  vineyard_id,
+  node_name
+) VALUES (
+  'eui-70b3d57ed00618ec',
+  1,
+  'node 2'
+);
+
+INSERT INTO node(
+  node_id,
+  vineyard_id,
+  node_name
+) VALUES (
+  'eui-70b3d57ed006182e',
+  1,
+  'node 2'
+);
