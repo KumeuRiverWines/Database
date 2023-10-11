@@ -12,7 +12,7 @@ $ docker build -t <image-name> .
 
 How to run conatiner
 ```
-$ docker run -p 5432:5432 --name <container-name> --env-file .env -d <image-name>
+$ docker run -p 5432:5432 --network krw-network --name <container-name> --env-file .env -d <image-name>
 ```
 
 
